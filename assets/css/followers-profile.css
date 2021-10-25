@@ -1,7 +1,20 @@
+@import url(./styles.css);
+
+
+/* Las dimensiones que se muestran a continuación son para
+un display por default de 425px. Después se agregarán los media queries para 
+displays mucho más grandes */ 
+
 * {
     margin: 0;
     box-sizing: border-box;
+    line-height: 25px;
 }
+
+main {
+    padding-bottom: 0.1px;
+}
+
 .banner {
   width: 100%;
   height: 124px;
@@ -19,7 +32,7 @@
 }
 
 .user-navbar__id {
-    background-color: var(--rosaOpaco);
+    background-color: var(--bgcard);
     padding: 12px;
     height: 60px;
     display: flex;
@@ -47,7 +60,7 @@
 
 .user-navbar__id button {
     border: none;
-    background-color: var(--azulClaro);
+    background-color: var(--rosaRGBA);
     color: var(--white);
     border-radius: var(--borderRadius);
     padding: 4px 16px;
@@ -61,12 +74,16 @@ button:hover {
 .user-navbar__interacciones {
     height: 50px;
     width: 100%;
-    background-color: var(--rosa);
+    background-color: var(--rosaRGBA);
     border-radius: 0 0 20px 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-family: var(--textFont);
+}
+
+a[href="#"] {
+    text-decoration: none
 }
 
 .user-navbar__interacciones a {
@@ -79,12 +96,19 @@ button:hover {
 
 
 .card-user-main {
-    margin: 50px 20px;
+    margin: 20px;
+    margin-top: 25px;
+    margin-bottom: 50px;
     border-radius: var(--borderRadius);
-    box-shadow: 0px 0px 10px 0px var(--white);
+    box-shadow: 
+    rgba(240, 46, 170, 0.4) 0px 5px, 
+    rgba(240, 46, 170, 0.3) 0px 10px, 
+    rgba(240, 46, 170, 0.2) 0px 15px, 
+    rgba(240, 46, 170, 0.1) 0px 20px, 
+    rgba(240, 46, 170, 0.05) 0px 25px;
     display: flex;
     position: relative;
-    height: 100vw;
+    height: 440px;
 }
 
 .card__img-back {
@@ -112,20 +136,31 @@ button:hover {
 }
 
 .card__info {
-    flex-basis: 150px;
     height: 100%;
+    width: 140px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 10px;
 }
 
 .card__info-content {
     height: 50px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card__info-content {
+    margin-bottom: 0;
+}
+
+.card__info-aside {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    gap: 40px;
 }
 
 .card__info-img {
@@ -146,11 +181,41 @@ button:hover {
     justify-content: space-between;
 }
 
+.card__info-user-post {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: auto;
+}
+
+.card__figure-user-post {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-bottom: 0;
+}
+
+.card__img-user-post {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.card__data-user-post {
+    height: 35px;
+}
+
+.card__data-user-post h3, p {
+    font-size: 1.6rem;
+    margin-bottom: 0;
+}
+
 .card__content-post {
     display: flex;
     flex-direction: column;
     height: 100%;
     overflow: hidden;
+    margin-top: 30px;
 }
 
 .card__post-titulo {
@@ -163,7 +228,7 @@ button:hover {
     gap: 60px;
     height: 35px;
     position: absolute;
-    bottom: 25px;
+    bottom: 30px;
     right: 50px;
 }
 
@@ -174,7 +239,7 @@ button:hover {
 .card__elementos-boton {
     height: 100%;
     border: none;
-    background-color: var(--azulClaro);
+    background-color: var(--rosaRGBA);
     color: var(--white);
     border-radius: var(--borderRadius);
     padding: 4px 16px;
@@ -182,28 +247,41 @@ button:hover {
 
 
 /* Apartir de aquí se agregan los media queries para volver
-   responsive la página y se comienza a modificar una vez superado
-   el ancho en pixeles de una tablet */
+   responsive la página en distintos tamaños de display */
 
 
 @media screen and (max-width: 360px) {
 
+    .card-user-main {
+        height: 490px;
+    }
+
     .card__elementos {
-        width: 191.14px;
-        bottom: 10px;
+        width: 195.58px;
+        bottom: 30px;
         right: 15px;
-        justify-content: space-between;
+    }
+
+    .card__info-user-post {
+        gap: 10px;
+    }
+
+    .card__content-post {
+        margin-top: 20px;
     }
 }
 
 
-@media screen and (max-width: 375px) {
+@media screen and (min-width: 361px) and (max-width: 375px) {
+
+    .card-user-main {
+        height: 490px;
+    }
 
     .card__elementos {
-        width: 191.14px;
-        bottom: 10px;
+        width: 209.05px;
+        bottom: 30px;
         right: 15px;
-        justify-content: space-between;
     }
 }
 
@@ -217,6 +295,10 @@ button:hover {
     .card__content-post h2, p {
         font-size: 1.3rem;
     }
+
+    .banner {
+        height: 125px;
+    }
 }
 
 
@@ -224,6 +306,17 @@ button:hover {
 
     .card__elementos {
         bottom: 50px;
+    }
+
+    .banner {
+        height: 160px;
+    }
+
+    .card-user-main {
+        height: 400px;
+        margin: 20px;
+        margin-top: 40px;
+        margin-bottom: 60px;
     }
 }
 
@@ -237,10 +330,6 @@ button:hover {
 
     .user-navbar__id button {
         margin-right: 30px;
-    }
-
-    .card-user-main {
-        height: 60vw;
     }
 
     .card__img-back {
@@ -266,6 +355,17 @@ button:hover {
 
     * {
         position: static;
+        line-height: 30px;
+    }
+
+    .main {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .banner {
+        height: 225px;
     }
 
     .user-navbar {
@@ -300,9 +400,15 @@ button:hover {
     }
 
     .card-user-main {
-        box-shadow: 0px 0px 20px 0px var(--white);
-        margin: 50px 160px;
-        height: 40vw;
+        box-shadow: 
+        rgba(240, 46, 170, 0.4) -5px 5px,
+        rgba(240, 46, 170, 0.3) -10px 10px, 
+        rgba(240, 46, 170, 0.2) -15px 15px, 
+        rgba(240, 46, 170, 0.1) -20px 20px, 
+        rgba(240, 46, 170, 0.05) -25px 25px;
+        height: 850px;
+        width: 600px;
+        background-color: var(--bgcard);
     }
 
     .card__img-back {
@@ -310,31 +416,97 @@ button:hover {
     }
 
     .card__info-media-album {
-        width: 100px;
-        height: 100px;
+        width: 280px;
+        height: 280px;
+        border-radius: 10px;
+        margin-bottom: 0px;
+        margin-right: 0px;
     }
 
     .card__info-media-img {
+        height: 100%;
+        width: 100%;
         object-fit: cover;
         margin-right: 0;
+        border-radius: inherit;
     }
 
     .card__overtext {
         padding: 40px;
+        height: 100%;
+    }
+
+    .card__overtext-superior {
+        height: 100%;
+        flex-direction: column;
     }
 
     .card__info {
-        flex-basis: 200px;
+        height: 300px;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+    }
+
+    .card__info-content {
+        height: auto;
+        width: auto;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card__info-aside {
+        border-left: 5px solid var(--rosa);
+        margin-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        flex-grow: 1;
         height: 100%;
-        border-right: 5px solid var(--white);
     }
 
     .card__post {
-        margin-left: 50px;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+
+    .card__info-user-post {
+        display: flex;
+        align-items: center;
+        margin-top: 35px;
+        gap: 20px;
+        height: auto;
+    }
+
+    .card__figure-user-post {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-bottom: 0;
+    }
+
+    .card__img-user-post {
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+    }
+
+    .card__data-user-post {
+        height: auto;
+    }
+
+    .card__data-user-post h3, p {
+        font-size: 2rem;
+    }
+
+    .card__content-post {
+        margin-top: 30px;
     }
 
     .card__content-post h2, p {
         font-size: 2rem;
+        margin-bottom: 0;
     }
 
     .card__elementos-boton {
@@ -347,7 +519,7 @@ button:hover {
 }
 
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1200px) {
 
     .card__info {
         justify-content: center;
@@ -363,7 +535,8 @@ button:hover {
     }
 
     .card-user-main {
-        height: 35vw;
+        height: 850px;
+        width: 600px;
     }
 
     .card__content-post {

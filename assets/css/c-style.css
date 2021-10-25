@@ -1,3 +1,5 @@
+@import url(./registro_exitoso.css);
+
 body{
     background-color: black !important;
 }   
@@ -38,11 +40,12 @@ body{
     text-align: center;
     margin: 20px;
     width: 80%;
-    font-size:20pt;
+    font-size:var(--textFont);
     color: white !important;
 }
 .main__textinfo--text{
     margin:0;
+    font-size: var(--textFont);
     text-align: center;
 }
 .main__recoveryform{
@@ -62,6 +65,9 @@ body{
 }
 .main__recoveryform--form button {
     margin: 30px;
+}
+.recovery__home{
+    font-size: 16px;
 }
 .main__toptext{
     width: 100%;
@@ -88,10 +94,11 @@ body{
     border: 0 !important;
     border-radius: 20px;
     color : white;
-    background-color: rgba(242, 128, 181, 0.198) ;
+    background-color: var(--rosaRGBA);
 }
 .main__comment-line img{
     width: 100px;
+    margin-right: 10px;
 }
 .main__comment-line tr{
     width: 100%;
@@ -103,8 +110,6 @@ body{
     width: 55%;
 }
 
-
-
 /* == ESTILOS GUIAS DE DISEÑO */
 /* 
 .main__comment-line table,.main__comment-line tr,.main__comment-line td,.main__comment-line th{
@@ -113,13 +118,5 @@ body{
 } */
 
 
-/* Estilos temporales */
 
-header , footer{
-    text-align: center;
-    width: 100%;
-    margin: 0, 0, 0, 0 !important;
-    background-color: rgb(242, 128, 181);
-    padding: 10 px;
-}
 

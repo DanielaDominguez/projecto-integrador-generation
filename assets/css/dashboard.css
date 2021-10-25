@@ -1,8 +1,10 @@
+@import url(./footerbuble.css);
+
 /* DASHBOARD BANNER */
 section.dashboard__img{
   height: 291px;
   width: 390;
-  background-image: url(../img/banner-demo.jpg);
+  background-image: url(../img/coverartblogfeature.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -30,8 +32,6 @@ background-color: var(--rosaOpaco)
   margin-block-end: 48px;
 }
 
-
-
 .dashboard__button {
   border: none;
   display: flex;
@@ -40,27 +40,27 @@ background-color: var(--rosaOpaco)
   justify-content: center;
   padding: 50px;
   border-radius: var(--borderRadius);
-  background-color: var(--rosaOpaco);
+  background-color: var(--rosaRGBA);
   box-sizing: border-box;
 }
 
 .dashboard__button--photo {
-  background-color: var(--azulClaro);
+  position: relative;
+  margin-top: 10px;
+  margin-left: 90%;
   padding: 0px 4px;
   border-radius: var(--borderRadius);
-  position: fixed;
-  right: 20px;
-  top: 12px;
+  background-color: var(--rosaOpaco);
 }
-
-
+.dashboard__button--photo:hover{
+  background-color: var(--rosaRGBA);
+}
 
 .dashboard__icon--size {
   width: 64px;
   margin: 0;
   display: block;
 }
-
 .dashboard__button p {
   text-align: center;
   font-family: var(--titlesFont);
@@ -78,8 +78,10 @@ background-color: var(--rosaOpaco)
 
 @media (max-width: 450px) {
   .dashboard__button--photo{
-    padding: 0 4px;
+    margin-left: 80%;;
+    padding: 0 10px;
     font-size: 10px;
+    
   }
 }
 
