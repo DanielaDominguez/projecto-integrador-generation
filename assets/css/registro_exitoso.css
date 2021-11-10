@@ -14,9 +14,20 @@ a:hover{
 .registro_check{
   padding: 100px;
   clip-path: circle();
-  background-color: var(--rosaRGBA); 
+  /* background-color: var(--rosaRGBA);  */
+}
+.main__img{
+  margin-top: 5%;
 }
 img{
-  width: 100px;
+  width: 25%;
+}
+@media(max-width: 450px){
+  .main__img{
+    margin-top: 30%;
+  }
+  .registro_check img{
+    width: 40vw;
+  }
 }
 
